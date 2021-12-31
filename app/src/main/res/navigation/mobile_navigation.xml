@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigationMeet">
+
+    <fragment
+        android:id="@+id/navigationCategory"
+        android:name="com.soten.sopist.ui.category.CategoryFragment"
+        android:label="카테고리"
+        tools:layout="@layout/fragment_category" />
+
+    <fragment
+        android:id="@+id/navigationMeet"
+        android:name="com.soten.sopist.ui.meet.MeetFragment"
+        android:label=""
+        tools:layout="@layout/fragment_meet" />
+
+    <fragment
+        android:id="@+id/navigationLike"
+        android:name="com.soten.sopist.ui.like.LikeFragment"
+        android:label="찜목록" />
+
+    <fragment
+        android:id="@+id/navigationProfile"
+        android:name="com.soten.sopist.ui.profile.ProfileFragment"
+        android:label="마이페이지" />
+
+    <fragment
+        android:id="@+id/navigationJoin"
+        android:name="com.soten.sopist.ui.profile.join.JoinFragment"
+        android:label="회원가입" />
+
+    <fragment
+        android:id="@+id/navigationLogin"
+        android:name="com.soten.sopist.ui.profile.login.LoginFragment"
+        android:label="로그인" />
+
+</navigation>

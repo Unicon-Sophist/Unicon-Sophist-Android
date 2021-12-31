@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Sopist</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="noLoginComment">로그인으로 \nSopist 200% 활용!</string>
+</resources>

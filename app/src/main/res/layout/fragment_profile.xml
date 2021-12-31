@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.soten.sopist.ui.profile.ProfileViewModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#f7f7f7">
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/nonExistentUserGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="menuContainer" />
+
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/existentUserGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    app:constraint_referenced_ids="loginMenuContainer, userInfoContainer" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/userContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="16dp">
+
+                        <ImageView
+                            android:id="@+id/profileImage"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@drawable/basic_profile_image"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/loginComment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:text="@{viewModel.userName}"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@id/profileImage"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/profileImage"
+                            app:layout_constraintTop_toTopOf="@id/profileImage" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/menuContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/userContainer">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/loginText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:text="로그인"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/joinText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginTop="16dp"
+                            android:text="회원가입"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginTop="16dp"
+                            android:text="앱 리뷰쓰기"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginTop="16dp"
+                            android:text="Sopist 소식"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginTop="16dp"
+                            android:text="고객센터"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/loginMenuContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/userInfoContainer">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="16dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/myMeetText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:text="내가 개설한 모임"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/myJoinMeetText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginTop="16dp"
+                            android:text="내가 가입한 모임"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/myLikeMeetText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginTop="16dp"
+                            android:text="내가 찜한 모임"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginTop="16dp"
+                            android:text="마감된 모임"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginTop="16dp"
+                            android:text="나의 소감문"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/logoutText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="24dp"
+                            android:layout_marginTop="16dp"
+                            android:onClick="@{() -> viewModel.logOut()}"
+                            android:text="로그아웃"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/userInfoContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardUseCompatPadding="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/userContainer">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="16dp">
+
+                        <TextView
+                            android:id="@+id/myInfoText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:text="내 정보"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/openingMeetCount"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@drawable/background_tv"
+                            android:gravity="center"
+                            android:text="80"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@id/stroke1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/myInfoText" />
+
+                        <View
+                            android:id="@+id/stroke1"
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:background="@color/colorPrimary"
+                            app:layout_constraintBottom_toBottomOf="@id/openingMeetCount"
+                            app:layout_constraintEnd_toStartOf="@id/joinMeetCount"
+                            app:layout_constraintStart_toEndOf="@id/openingMeetCount"
+                            app:layout_constraintTop_toTopOf="@id/openingMeetCount" />
+
+                        <TextView
+                            android:id="@+id/joinMeetCount"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="@drawable/background_tv"
+                            android:gravity="center"
+                            android:text="75"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@id/stroke2"
+                            app:layout_constraintStart_toEndOf="@id/stroke1"
+                            app:layout_constraintTop_toTopOf="@id/openingMeetCount" />
+
+                        <View
+                            android:id="@+id/stroke2"
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:background="@color/colorPrimary"
+                            app:layout_constraintBottom_toBottomOf="@id/openingMeetCount"
+                            app:layout_constraintEnd_toStartOf="@+id/myReport"
+                            app:layout_constraintStart_toEndOf="@id/joinMeetCount"
+                            app:layout_constraintTop_toTopOf="@id/openingMeetCount" />
+
+                        <TextView
+                            android:id="@+id/myReport"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="@drawable/background_tv"
+                            android:gravity="center"
+                            android:text="75"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toStartOf="@id/stroke3"
+                            app:layout_constraintStart_toEndOf="@id/stroke2"
+                            app:layout_constraintTop_toTopOf="@id/openingMeetCount" />
+
+                        <View
+                            android:id="@+id/stroke3"
+                            android:layout_width="0dp"
+                            android:layout_height="2dp"
+                            android:background="@color/colorPrimary"
+                            app:layout_constraintBottom_toBottomOf="@id/openingMeetCount"
+                            app:layout_constraintEnd_toStartOf="@id/myStatusCount"
+                            app:layout_constraintStart_toEndOf="@id/myReport"
+                            app:layout_constraintTop_toTopOf="@id/openingMeetCount" />
+
+                        <TextView
+                            android:id="@+id/myStatusCount"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/background_tv"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:gravity="center"
+                            android:text="75"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/stroke3"
+                            app:layout_constraintTop_toTopOf="@id/openingMeetCount" />
+
+                        <TextView
+                            android:id="@+id/openingMeetCountComment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="개설 모임"
+                            android:textColor="@color/black"
+                            app:layout_constraintEnd_toEndOf="@id/openingMeetCount"
+                            app:layout_constraintStart_toStartOf="@id/openingMeetCount"
+                            app:layout_constraintTop_toBottomOf="@id/openingMeetCount" />
+
+                        <TextView
+                            android:id="@+id/joinMeetCountComment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="가입 모임"
+                            android:textColor="@color/black"
+                            app:layout_constraintEnd_toEndOf="@id/joinMeetCount"
+                            app:layout_constraintStart_toStartOf="@id/joinMeetCount"
+                            app:layout_constraintTop_toBottomOf="@id/joinMeetCount" />
+
+                        <TextView
+                            android:id="@+id/myReportComment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="나의 소감문"
+                            android:textColor="@color/black"
+                            app:layout_constraintEnd_toEndOf="@id/myReport"
+                            app:layout_constraintStart_toStartOf="@id/myReport"
+                            app:layout_constraintTop_toBottomOf="@id/myReport" />
+
+                        <TextView
+                            android:id="@+id/myStatusCountComment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="참여 현황"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="@id/myStatusCount"
+                            app:layout_constraintStart_toStartOf="@id/myStatusCount"
+                            app:layout_constraintTop_toBottomOf="@id/myStatusCount" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="16dp"
+                            android:layout_marginTop="32dp"
+                            android:background="#F7F7F7"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            app:layout_constraintTop_toBottomOf="@id/joinMeetCountComment">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="진행중" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="2개" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="출석률" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="5일" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp">
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="모임중" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="5개" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="등급" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="NEW" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

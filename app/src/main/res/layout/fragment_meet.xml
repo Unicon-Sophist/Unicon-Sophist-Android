@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.meet.MeetFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/meetComment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="내가 개설한 모임"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/moreMeet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="더보기+"
+                        app:layout_constraintBottom_toBottomOf="@id/meetComment"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/iMakeMeet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:scrollbars="none"
+                        app:layout_constraintTop_toBottomOf="@id/meetComment">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/thumbnail1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:background="@drawable/thumbnail"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/meetTitle1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:text="역사 문학 토론방"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    app:layout_constraintStart_toStartOf="@id/thumbnail1"
+                                    app:layout_constraintTop_toBottomOf="@id/thumbnail1" />
+
+                                <TextView
+                                    android:id="@+id/meetInfo1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="책에서 찾아낸 한줌의 소중한 문구와 그 문구의 ..."
+                                    app:layout_constraintStart_toStartOf="@id/meetTitle1"
+                                    app:layout_constraintTop_toBottomOf="@id/meetTitle1" />
+
+                                <TextView
+                                    android:id="@+id/thaListText1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="#역사 #아시아 #문화"
+                                    android:textSize="14sp"
+                                    app:layout_constraintStart_toStartOf="@id/meetTitle1"
+                                    app:layout_constraintTop_toBottomOf="@id/meetInfo1" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/thumbnail2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:background="@drawable/thumbnail"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/meetTitle2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:text="역사 문학 토론방"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    app:layout_constraintStart_toStartOf="@id/thumbnail2"
+                                    app:layout_constraintTop_toBottomOf="@id/thumbnail2" />
+
+                                <TextView
+                                    android:id="@+id/meetInfo2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="책에서 찾아낸 한줌의 소중한 문구와 그 문구의 ..."
+                                    app:layout_constraintStart_toStartOf="@id/meetTitle2"
+                                    app:layout_constraintTop_toBottomOf="@id/meetTitle2" />
+
+                                <TextView
+                                    android:id="@+id/thaListText2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:text="#역사 #아시아 #문화"
+                                    android:textSize="14sp"
+                                    app:layout_constraintStart_toStartOf="@id/meetTitle2"
+                                    app:layout_constraintTop_toBottomOf="@id/meetInfo2" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/thumbnail3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:background="@drawable/thumbnail"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/meetTitle3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:text="역사 문학 토론방"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    app:layout_constraintStart_toStartOf="@id/thumbnail3"
+                                    app:layout_constraintTop_toBottomOf="@id/thumbnail3" />
+
+                                <TextView
+                                    android:id="@+id/meetInfo3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="책에서 찾아낸 한줌의 소중한 문구와 그 문구의 ..."
+                                    app:layout_constraintStart_toStartOf="@id/meetTitle3"
+                                    app:layout_constraintTop_toBottomOf="@id/meetTitle3" />
+
+                                <TextView
+                                    android:id="@+id/thaListText3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="#역사 #아시아 #문화"
+                                    android:textSize="14sp"
+                                    app:layout_constraintStart_toStartOf="@id/meetTitle3"
+                                    app:layout_constraintTop_toBottomOf="@id/meetInfo3" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:id="@+id/meetComment2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="내가 가입한 모임"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/moreMeet2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:text="더보기+"
+                        app:layout_constraintBottom_toBottomOf="@id/meetComment2"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/iMakeMeet2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:scrollbars="none"
+                        app:layout_constraintTop_toBottomOf="@id/meetComment2">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/thumbnail4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:background="@drawable/thumbnail"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/meetTitle4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:text="역사 문학 토론방"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    app:layout_constraintStart_toStartOf="@id/thumbnail4"
+                                    app:layout_constraintTop_toBottomOf="@id/thumbnail4" />
+
+                                <TextView
+                                    android:id="@+id/meetInfo4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="책에서 찾아낸 한줌의 소중한 문구와 그 문구의 ..."
+                                    app:layout_constraintStart_toStartOf="@id/meetTitle4"
+                                    app:layout_constraintTop_toBottomOf="@id/meetTitle4" />
+
+                                <TextView
+                                    android:id="@+id/thaListText4"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="#역사 #아시아 #문화"
+                                    android:textSize="14sp"
+                                    app:layout_constraintStart_toStartOf="@id/meetTitle4"
+                                    app:layout_constraintTop_toBottomOf="@id/meetInfo4" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/thumbnail5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:background="@drawable/thumbnail"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/meetTitle5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:text="역사 문학 토론방"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    app:layout_constraintStart_toStartOf="@id/thumbnail5"
+                                    app:layout_constraintTop_toBottomOf="@id/thumbnail5" />
+
+                                <TextView
+                                    android:id="@+id/meetInfo5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="책에서 찾아낸 한줌의 소중한 문구와 그 문구의 ..."
+                                    app:layout_constraintStart_toStartOf="@id/meetTitle5"
+                                    app:layout_constraintTop_toBottomOf="@id/meetTitle5" />
+
+                                <TextView
+                                    android:id="@+id/thaListText5"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:text="#역사 #아시아 #문화"
+                                    android:textSize="14sp"
+                                    app:layout_constraintStart_toStartOf="@id/meetTitle5"
+                                    app:layout_constraintTop_toBottomOf="@id/meetInfo5" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <ImageView
+                                    android:id="@+id/thumbnail6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:background="@drawable/thumbnail"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/meetTitle6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="16dp"
+                                    android:text="역사 문학 토론방"
+                                    android:textColor="@color/black"
+                                    android:textSize="20sp"
+                                    app:layout_constraintStart_toStartOf="@id/thumbnail6"
+                                    app:layout_constraintTop_toBottomOf="@id/thumbnail6" />
+
+                                <TextView
+                                    android:id="@+id/meetInfo6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:text="책에서 찾아낸 한줌의 소중한 문구와 그 문구의 ..."
+                                    app:layout_constraintStart_toStartOf="@id/meetTitle6"
+                                    app:layout_constraintTop_toBottomOf="@id/meetTitle6" />
+
+                                <TextView
+                                    android:id="@+id/thaListText6"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="#역사 #아시아 #문화"
+                                    android:textSize="14sp"
+                                    app:layout_constraintStart_toStartOf="@id/meetTitle6"
+                                    app:layout_constraintTop_toBottomOf="@id/meetInfo6" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
